@@ -27,7 +27,7 @@ public class MockCustomerService {
 
         when(customerService.createCustomer(any(UUID.class), any(String.class))).thenAnswer(i -> {
             UUID userId = i.getArgument(0);
-            String userEmail = i.getArgument(0);
+            String userEmail = i.getArgument(1);
 
             Customer customer = new Customer();
             customer.setId(userId.toString());
