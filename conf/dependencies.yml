@@ -1,0 +1,18 @@
+self: play -> stripe 1.0.0
+
+configurations:
+    - provided:
+          exclude: true
+
+require:
+    - play
+    - org.mockito -> mockito-core 2.24.0
+    - com.sismics.sapparot -> sapparot 1.4.1
+    - com.stripe -> stripe-java 5.22.1
+
+repositories:
+    - sismicsNexus:
+          type: iBiblio
+          root: "https://nexus.sismics.com/repository/com.sismics/"
+          contains:
+              - com.sismics.sapparot -> *
