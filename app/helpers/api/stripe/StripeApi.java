@@ -13,9 +13,11 @@ public class StripeApi {
 
     private RequestOptions requestOptions;
 
-    private CustomerService customerService;
+    private BalanceTransactionService balanceTransactionService;
 
     private CardService cardService;
+
+    private CustomerService customerService;
 
     private InvoiceService invoiceService;
 
@@ -35,15 +37,17 @@ public class StripeApi {
     public StripeApi() {
         requestOptions = createRequestOptions();
         if (isMock()) {
-            customerService = MockCustomerService.create();
+            balanceTransactionService = MockBalanceTransactionService.create();
             cardService = MockCardService.create();
+            customerService = MockCustomerService.create();
             invoiceService = MockInvoiceService.create();
             planService = MockPlanService.create();
             subscriptionService = MockSubscriptionService.create();
             webhookService = MockWebhookService.create();
         } else {
-            customerService = new CustomerService(this);
+            balanceTransactionService = new BalanceTransactionService(this);
             cardService = new CardService(this);
+            customerService = new CustomerService(this);
             invoiceService = new InvoiceService(this);
             planService = new PlanService(this);
             subscriptionService = new SubscriptionService(this);
@@ -71,6 +75,10 @@ public class StripeApi {
 
     public RequestOptions getRequestOptions() {
         return requestOptions;
+    }
+
+    public BalanceTransactionService getBalanceTransactionService() {
+        return balanceTransactionService;
     }
 
     public CustomerService getCustomerService() {
