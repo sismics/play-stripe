@@ -41,6 +41,22 @@ public class InvoiceService {
     }
 
     /**
+     * Get the upcoming invoice, if any.
+     *
+     * @param customerId The customer ID
+     * @return The invoice
+     */
+    public Invoice getUpcomingInvoice(String customerId) {
+        Map<String, Object> params = new HashMap<>();
+        params.put("customer", customerId);
+        try {
+            return Invoice.upcoming(params, stripeApi.getRequestOptions());
+        } catch (Exception e) {
+            throw new RuntimeException("Error retrieving upcoming invoice for customer: " + customerId, e);
+        }
+    }
+
+    /**
      * Retrieve an invoice.
      *
      * @param id The invoice ID
