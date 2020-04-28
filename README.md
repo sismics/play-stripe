@@ -10,7 +10,7 @@ This plugin adds [Stripe](https://stripe.com) support to Play! Framework 1 appli
 
 ```
 require:
-    - stripe -> stripe 1.2.0
+    - stripe -> stripe 1.2.1
 
 repositories:
     - sismicsNexusRaw:
