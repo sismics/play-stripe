@@ -26,8 +26,12 @@ public class BalanceTransactionService {
      */
     public BalanceTransactionCollection findBalanceTransactionByType(String type, Integer limit) {
         Map<String, Object> params = new HashMap<>();
-        params.put("type", type);
-        params.put("limit", limit);
+        if (type != null) {
+            params.put("type", type);
+        }
+        if (limit != null) {
+            params.put("limit", limit);
+        }
         try {
             return BalanceTransaction.list(params, stripeApi.getRequestOptions());
         } catch (Exception e) {
