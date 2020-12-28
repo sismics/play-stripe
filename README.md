@@ -1,3 +1,6 @@
+[![GitHub release](https://img.shields.io/github/release/sismics/play-stripe.svg?style=flat-square)](https://github.com/sismics/play-stripe/releases/latest)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 # play-stripe plugin
 
 This plugin adds [Stripe](https://stripe.com) support to Play! Framework 1 applications.
@@ -10,7 +13,7 @@ This plugin adds [Stripe](https://stripe.com) support to Play! Framework 1 appli
 
 ```
 require:
-    - stripe -> stripe 1.2.1
+    - stripe -> stripe 1.3.0
 
 repositories:
     - sismicsNexusRaw:

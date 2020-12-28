@@ -1,4 +1,4 @@
-self: play -> stripe 1.2.1
+self: play -> stripe 1.3.0
 
 configurations:
     - provided:
